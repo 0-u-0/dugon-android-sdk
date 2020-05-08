@@ -1,2 +1,3 @@
 rootProject.name='Dugon-Android-SDK'
-include ':app'
+include ':sdk'
+include ':sdk-sample'

@@ -1,4 +1,5 @@
 package one.dugon;
 
-public class test {
+public class Dugon {
+
 }
