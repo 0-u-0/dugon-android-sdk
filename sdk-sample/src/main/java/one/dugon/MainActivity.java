@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package one.dugon;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -21,7 +21,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.net.ssl.SSLContext;
-
 
 public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";

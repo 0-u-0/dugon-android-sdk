@@ -49,6 +49,7 @@ task aarRelease(type: Copy) {
         include '*.aar'
         rename 'app-(.*).aar',"dugon-android-sdk-\$1-${android.defaultConfig.versionName}.aar"
     }
+    //copy mapping
     from("${project.buildDir}/outputs/mapping/release")
 
     into "${rootProject.projectDir}/dst"

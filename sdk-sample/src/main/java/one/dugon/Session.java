@@ -1,10 +1,13 @@
-package com.example.myapplication;
+package one.dugon;
 
 import android.util.Log;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Session implements SocketListener {
 
@@ -38,7 +41,7 @@ public class Session implements SocketListener {
             params.put("sessionId", sessionId);
             params.put("tokenId", tokenId);
             params.put("metadata", metadata);
-        }catch (Exception e){
+        } catch (Exception e) {
             //TODO(CC): error
         }
 
@@ -50,7 +53,17 @@ public class Session implements SocketListener {
 
     @Override
     public void onConnected() {
-        Log.d(TAG,"connected");
+        Log.d(TAG, "connected");
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("pub", true);
+        data.put("sub", true);
+
+        this.socket.request("join", data, (responseData) -> {
+            Log.i(TAG,"get join");
+        });
+
+
     }
 
     @Override
@@ -62,4 +75,6 @@ public class Session implements SocketListener {
     public void onClosed() {
 
     }
+
+
 }
